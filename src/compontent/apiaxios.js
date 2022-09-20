@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const api_url = "http://localhost:8000/api";
+const api_url = "http://localhost:8000/api/";
 
 // axios 配置
 // axios.defaults.baseURL = "/";
