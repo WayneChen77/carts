@@ -6,15 +6,10 @@ import { CommodityContext } from "../App";
 import { CurrentContext } from "../top-compontent";
 import { useNavigate } from "react-router-dom";
 
-//抓取id去patch
-
 const Commodityfield = ({ data, setJump, commodityItem }) => {
   const { id, title, img, describe, suggestprice, price, confirm } = data;
 
   const Navigate = useNavigate();
-  // const [patchdata, setPatchData] = useContext(PatchContext);
-  //避免系統宣告資料宣告未使用 另外將函式資料抓出使用如下
-  // const [patchdata, setPatchData] = useContext(PatchContext);
   const patchhataState = useContext(PatchContext);
   const setPatchData = patchhataState[1];
   const patchData = patchhataState[0];
@@ -39,7 +34,7 @@ const Commodityfield = ({ data, setJump, commodityItem }) => {
       const cart = carts[0];
       cart.quantity = cart.quantity + 1;
       //cart.id =品項ID id=commodityId
-      //這邊更新設置直接抓取cart.id 不要用?commodity="ID"抓賄抓不到
+      //這邊更新設置直接抓取cart.id 不要用?commodity="ID"抓不到
       await Getapi.putcart(cart.id, cart)
         .then((res) => {})
         .catch((e) => {

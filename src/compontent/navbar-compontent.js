@@ -6,7 +6,7 @@ import { CurrentContext } from "../top-compontent";
 const Navbar = () => {
   const [currentUser, setCurrentUser] = useContext(CurrentContext);
   const { nickName } = currentUser ?? "";
-
+  //此頁面許多重複按件為RWD使用
   //登出
   const handelClickLogOut = () => {
     Getapi.logout();

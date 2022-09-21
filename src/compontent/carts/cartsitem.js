@@ -42,7 +42,7 @@ const Cartsitem = ({
     setCarprice(datas.quantity * Number(datas.price));
     proptotalprice();
   }, [quantity, data, datas, proptotalprice, setData]);
-  // {datas.quantity * Number(datas.price)}
+
   //刪除
   const handelClickDelete = () => {
     Getapi.deletecarts(datas.id);

@@ -9,7 +9,6 @@ import { toast } from "react-toastify";
 const Patchcommofity = ({ setJump }) => {
   //引入總資料檔案 對比
   const useComfuncSet = useContext(CommodityContext);
-
   const commodityItem = useComfuncSet.commodityItem;
   const { setCommodityItem } = useComfuncSet;
   const { setSearchCommodity } = useComfuncSet;
@@ -17,12 +16,10 @@ const Patchcommofity = ({ setJump }) => {
   const { setMyproductData } = useComfuncSet;
   const { myproductData } = useComfuncSet;
 
-  // const [patchdata, setPatchData] = useContext(PatchContext);
   //避免系統宣告資料宣告未使用 另外將函式資料抓出使用如下
   const patchhataState = useContext(PatchContext);
   const patchdata = patchhataState[0];
   const setPatchData = patchhataState[1];
-
   const [title, setTitle] = useState(patchdata.title);
   const [suggestprice, setSuggestprice] = useState(patchdata.suggestprice);
   const [price, setPrice] = useState(patchdata.price);
@@ -31,31 +28,10 @@ const Patchcommofity = ({ setJump }) => {
   const [confirm, setConfirm] = useState(patchdata.confirm);
   const [img, setImg] = useState(patchdata.img ?? "");
   const { userId } = patchdata;
-  // const [userId, setUserId] = useState(patchdata.userId);
   const { id } = patchdata;
-  // const [id, setId] = useState(patchdata.id);
 
-  // {img ? "none" : "confirmnone"}>
-
-  // const handelClickShelf = () => {
-  //   setConfirm(true);
-  //這邊回首頁不會更新要設定useffect
-  // };
   const handelClickShelf = (e) => {
     e.preventDefault();
-    // let commod = {
-    //   id: 1,
-    //   title: title,
-    //   img: img,
-    //   alt: "Card image cap",
-    //   describe: describe,
-    //   suggestprice: suggestprice,
-    //   price: price,
-    //   confirm: confirm,
-    //   userId: 1,
-    //   number: number,
-    // };
-
     Getapi.patchcommoditydata(
       id,
       title,
@@ -124,7 +100,6 @@ const Patchcommofity = ({ setJump }) => {
     }
   };
   //刪除
-  //刪第2次失敗 放上層? 想辦法帶餐數?
   const handelClickDelete = () => {
     Getapi.deletecomditydata(id);
 
@@ -143,22 +118,6 @@ const Patchcommofity = ({ setJump }) => {
     toast.error("物品刪除");
     setJump(0);
   };
-  //修改 新增後儲存至data
-  // useEffect(() => {
-  //   Getapi.patchcommoditydata(
-  //     dataId,
-  //     title,
-  //     img,
-  //     describe,
-  //     suggestprice,
-  //     price,
-  //     confirm,
-  //     userId,
-  //     number
-  //   );
-  // }, [handelcheck]);
-  //設定上架開關confirm成立的話開關為開啟
-  //這邊如果有庫存成立 將開關設置為true上架中
 
   return (
     <div className="p-2">

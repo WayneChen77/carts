@@ -28,22 +28,10 @@ const Addcommofity = ({ setJump }) => {
 
   const handelClickShelf = () => {
     setConfirm(true);
-    //這邊回首頁不會更新要設定useffect
   };
   const handelSubmitShelf = (e) => {
     e.preventDefault();
-    // let commod = {
-    //   id: 1,
-    //   title: title,
-    //   img: img,
-    //   alt: "Card image cap",
-    //   describe: describe,
-    //   suggestprice: suggestprice,
-    //   price: price,
-    //   confirm: confirm,
-    //   sellerId: 1,
-    //   number: number,
-    // };
+
     //這邊userId用來區分產品提供者 賣方
     const userId = currentUser.ID;
     Getapi.postcommoditydata(

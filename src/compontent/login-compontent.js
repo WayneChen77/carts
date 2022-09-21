@@ -14,11 +14,7 @@ const Login = () => {
   const Navigate = useNavigate();
   const handelClickRegister = (e) => {
     e.preventDefault();
-    // const newUser = {
-    //   UserAddress: UserAddress,
-    //   UserPassword: UserPassword,
-    // };
-    // console.log(newUser);
+
     Getapi.login(UserAddress, UserPassword)
       .then((res) => {
         const logToken = res.data;
