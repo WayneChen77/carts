@@ -2,6 +2,9 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.navbar {
+  z-index: 1;
+}
 
 // @media screen and (max-width: 950px) {
 //   .navTotal {
