@@ -2,7 +2,7 @@
   command = "CI= npm run build"
 
 [[redirects]]
-  from = "/api/*"
+  from = "http://localhost:8000/api/*"
   to = "https://waynecartserver.herokuapp.com/api/:splat"
   status = 200
 
