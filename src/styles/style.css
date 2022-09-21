@@ -11027,6 +11027,10 @@ textarea.form-control-lg {
   justify-content: space-between;
 }
 
+.navbar {
+  z-index: 1;
+}
+
 .error-template {
   padding: 40px 15px;
   text-align: center;
@@ -11345,8 +11349,5 @@ input[type=number] {
   }
   .phonerwd2 {
     display: block;
-  }
-  .cart {
-    z-index: -1;
   }
 }/*# sourceMappingURL=style.css.map */
