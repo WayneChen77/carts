@@ -19,3 +19,22 @@
     display: block;
   }
 }
+
+//adj home排版0220922
+@media screen and (max-width: 430px) {
+  .profilePage .profileRight {
+    justify-content: center;
+    .changeUser {
+      width: 20%;
+    }
+  }
+  .homeitem {
+    justify-content: center;
+  }
+  .cart {
+    z-index: 1;
+  }
+  .panel {
+    z-index: 3;
+  }
+}

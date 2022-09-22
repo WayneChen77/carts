@@ -5,6 +5,7 @@ import { JumpContext } from "../App";
 //輸入彈窗內容
 import Addcommofity from "./addcommofity-component";
 import Patchcommofity from "./patchcommofity-component";
+
 const Jump = () => {
   // app處抓取UserContext資料處理jump
   const [jump, setJump] = useContext(JumpContext);
@@ -33,6 +34,8 @@ const Jump = () => {
 
         {jump === 1 && <Addcommofity setJump={setJump} />}
         {jump === 3 && <Patchcommofity setJump={setJump} />}
+        {/* 下面那行寫法會有bug 用上面寫法 */}
+        {/* {jump == 3 ? <Addcommofity setJump={setJump} /> : <div>555</div>} */}
       </div>
     </div>
   );

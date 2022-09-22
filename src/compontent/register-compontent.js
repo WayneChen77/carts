@@ -13,9 +13,22 @@ const Register = () => {
   const Navigate = useNavigate();
   const handelClickRegister = (e) => {
     e.preventDefault();
-
+    // const newUser = {
+    //   UserAddress: UserAddress,
+    //   UserPassword: UserPassword,
+    //   UserName: UserName,
+    //   currentType: currentType,
+    //   type: 0,
+    // };
     Getapi.register(UserAddress, UserPassword, nickName, current, 0)
       .then((res) => {
+        // const logToken = res.data;
+        // if (logToken && logToken.JwToken.length > 0) {
+        //   localStorage.setItem("usertoken", JSON.stringify(logToken));
+        //   toast.success("Log succes", { position: "top-right" });
+        //   setCurrentUser(Getapi.getcurrent());
+        //   Navigate("/profile");
+        // }
         toast.success("註冊完成.", {
           position: "top-right",
         });
@@ -108,6 +121,18 @@ const Register = () => {
           </label>
         </div>
         <div className="col-auto">
+          {/* <input
+            type="text"
+            id="inputType"
+            className="form-control"
+            aria-describedby="passwordHelpInline"
+            value={current}
+            onChange={(e) => {
+              setCurrent(e.target.value);
+            }}
+            placeholder="sells or normal"
+            required
+          /> */}
           <select
             className="form-select"
             value={current}

@@ -31,12 +31,12 @@ const Card = ({ data, setJump }) => {
   };
 
   return (
-    <div className="card  m-2" style={{ width: "18rem" }}>
+    <div className="card  m-2" style={{ width: "16rem" }}>
       <img
         className="card-img-top"
         src={img}
         alt={title}
-        style={{ width: "16rem", height: "10rem" }}
+        style={{ height: "10rem" }}
       />
       {/* 無照片處理 */}
       <div className={img ? "none" : "confirmnone"}>

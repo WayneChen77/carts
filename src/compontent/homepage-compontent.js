@@ -4,6 +4,7 @@ import Commodityfield from "./commodityfield-compontent";
 import { useEffect } from "react";
 //api集結處
 import Getapi from "./apiaxios";
+
 //套用載入動畫
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 //套用開啟彈出欄 這邊利用context由app抓取狀態
@@ -13,19 +14,29 @@ import { CurrentContext } from "../top-compontent";
 
 const Homepage = () => {
   //宣告使用context
+  //這邊避免函式未使用宣告警告 另外把資料抓出來用
+  // const [jump, setJump] = useContext(JumpContext);
   const jumpState = useContext(JumpContext);
   const setJump = jumpState[1];
+
   const CurrentUserset = useContext(CurrentContext);
   const currentUser = CurrentUserset[0];
 
   //嘗試利用contex model將下方com searcom做成集合抓取使用
   const useComfuncset = useContext(CommodityContext);
+
   const commodityItem = useComfuncset.commodityItem;
   const setCommodityItem = useComfuncset.setCommodityItem;
   const searchCommodity = useComfuncset.searchCommodity;
   const setSearchCommodity = useComfuncset.setSearchCommodity;
   // const { setSearchCommodity } = useComfuncset; 上面也能改這樣寫
+  //這邊知後修正 api完全提取後再丟出函式 不要在這邊處理async
+  //這邊一個部分給搜尋使用 保持原始檔案正確
+  // const [commodityItem, setCommodityItem] = useState([]);
+  // const [searchCommodity, setSearchCommodity] = useState([]);
 
+  //下方抓取資料建議使用健投函式 不要用async 因未會導致依賴問題根必須將資料全部放進去才會動
+  //使用箭頭函式問題就不會那麼多
   const aqv = searchCommodity.length;
   useEffect(() => {
     async function getcommodity() {
@@ -40,6 +51,16 @@ const Homepage = () => {
     }
     getcommodity();
   }, [setCommodityItem, setSearchCommodity, aqv]);
+
+  // searchCommodity, setCommodityItem;
+
+  //假商品一設定售完css處理
+  // const commodity = {
+  //   title: "title",
+  //   suggestprice: "suggestprice",
+  //   price: "price",
+  //   confirm: false,
+  // };
 
   //連結至jump啟動彈出開關
   const tooadd = () => {
@@ -56,7 +77,9 @@ const Homepage = () => {
         setCommodityItem={setCommodityItem}
         setSearchCommodity={setSearchCommodity}
       />
-      {/* 這邊要載入jump中的彈跳開關 open所以設定jump連節函數*/}
+      {/* 此案件模擬取得下級資料 onClick={ttcommodity}待完成後刪除 彈出設定*/}
+      {/* 這邊要載入jump中的彈跳開關 open所以上設定jump連節函數*/}
+      {/* onClick={ttcommodity} */}
       {current === "sells" && (
         <button className="btn " onClick={tooadd}>
           <svg

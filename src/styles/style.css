@@ -11028,7 +11028,7 @@ textarea.form-control-lg {
 }
 
 .navbar {
-  z-index: 1;
+  z-index: 2;
 }
 
 .error-template {
@@ -11050,7 +11050,7 @@ textarea.form-control-lg {
   width: 75%;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 775px) {
   .search button {
     width: 48px;
   }
@@ -11061,6 +11061,12 @@ textarea.form-control-lg {
     position: fixed;
     right: 36px;
     top: 120px;
+  }
+  .card {
+    width: 15rem;
+  }
+  .card img {
+    width: auto;
   }
 }
 .searchhr {
@@ -11102,6 +11108,9 @@ div .cart button span {
   transform: translate(-60%, 0);
 }
 
+.card {
+  width: 18rem;
+}
 .card .card-body {
   position: relative;
 }
@@ -11131,6 +11140,25 @@ div .cart button span {
   transition: all 300ms ease-in;
 }
 
+@media screen and (max-width: 775px) and (min-width: 700px) {
+  .search button {
+    width: 48px;
+  }
+  .h-65 {
+    width: 65%;
+  }
+  .cart {
+    position: fixed;
+    right: 36px;
+    top: 120px;
+  }
+  .card {
+    width: 15rem;
+  }
+  .card img {
+    width: auto;
+  }
+}
 .wrapper {
   position: relative;
 }
@@ -11349,5 +11377,22 @@ input[type=number] {
   }
   .phonerwd2 {
     display: block;
+  }
+}
+@media screen and (max-width: 430px) {
+  .profilePage .profileRight {
+    justify-content: center;
+  }
+  .profilePage .profileRight .changeUser {
+    width: 20%;
+  }
+  .homeitem {
+    justify-content: center;
+  }
+  .cart {
+    z-index: 1;
+  }
+  .panel {
+    z-index: 3;
   }
 }/*# sourceMappingURL=style.css.map */

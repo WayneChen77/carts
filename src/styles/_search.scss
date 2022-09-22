@@ -3,7 +3,7 @@
   width: 75%;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 775px) {
   .search button {
     width: 48px;
     // width: 16px;
@@ -16,6 +16,12 @@
     position: fixed;
     right: 36px;
     top: 120px;
+  }
+  .card {
+    width: 15rem;
+    img {
+      width: auto;
+    }
   }
 }
 
